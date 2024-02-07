@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const mongoose = require('mongoose')
 const note_routes = require('./routes/notes')
 const app = express()
 
@@ -14,8 +15,16 @@ app.use((req,res,next)=>{
 //Routing
 app.use('/api/notes',note_routes)
 
-//Listening
-app.listen(process.env.PORT,() => {
-    console.log("hello from port",process.env.PORT)
-})
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        //Listening
+        app.listen(process.env.PORT,() => {
+        console.log("connected and listening. Hello from port",process.env.PORT)
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
+
 
