@@ -11,6 +11,7 @@ router.get('/:id',(req,res)=>{
 })
 
 router.post('/',(req,res)=>{
+    
     res.json({msg:'POST new note'})
 })
 
