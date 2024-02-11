@@ -3,13 +3,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const noteSchema = new Schema({
-    title:{
+    note_title:{
         type: String,
         required: true
     },
-    body:{
+    note_body:{
         type: String,
-        required: false
+        required: true
     }
 },{timestamps: true})
 
