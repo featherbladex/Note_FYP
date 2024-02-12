@@ -37,10 +37,37 @@ const create_note = async (req,res) => {
 }
 
 //DELETE 
-const delete_note = async (req, res) => {}
+const delete_note = async (req, res) => {
+    const {id} = req.params
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No note found :('})
+    }
+
+    const note = await Note.findOneAndDelete({_id:id})
+    if(!note) {
+        return res.status(400).json({error: 'No note found :('})
+    }
+
+    res.status(200).json(note)
+
+}
 
 //PATCH/UPDATE
-const update_note = async (req, res) => {}
+const update_note = async (req, res) => {
+    const {id} = req.params
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No note found :('})
+    }
+
+    const note = await Note.findOneAndUpdate({_id:id}, {... req.body}, {new: true})
+    if(!note) {
+        return res.status(400).json({error: 'No note found :('})
+    }
+
+    res.status(200).json(note)
+
+
+}
 
 
 //Export
@@ -48,5 +75,7 @@ const update_note = async (req, res) => {}
 module.exports = {
     get_all,
     get_note,
-    create_note
+    create_note,
+    delete_note,
+    update_note
 }
