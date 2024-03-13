@@ -55,29 +55,57 @@ header a {
   font-size: 0.9em;
   color: #555;
 }
-.note-details span {
+
+.note-details #edit{
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  cursor: pointer;
+  background: #007c15;
+  padding: 6px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 500;
+}
+.note-details #delete{
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: #990000;
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 label, input {
   display: block;
 }
-input {
+input  {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #868686;
   border-radius: 4px;
   box-sizing: border-box;
+  
 }
+
+textarea {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #868686;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 150px;
+  resize: none;
+  
+}
+
 form button {
   background: var(--primary);
   border: 0;

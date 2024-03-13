@@ -12,6 +12,19 @@ const NoteDetails = ({ note })=> {
         if (response.ok){
             dispatch({type: 'DELETE_NOTE', payload: json})
         }
+    }
+
+    const handleEdit = async () =>{
+        const response = await fetch('/api/notes/' + note._id,{
+            method: 'PATCH'
+        })
+
+        const json = await response.json()
+
+        if (response.ok){
+            
+            dispatch({type: 'UPDATE_NOTE', payload: json})
+        }
 
 
     }
@@ -22,7 +35,9 @@ const NoteDetails = ({ note })=> {
             <p>{note.note_body}</p>
             <p>{note.createdAt}</p>
             <p>{note.updatedAt}</p>
-            <span onClick={handleDelete}>Delete Note</span>
+            <span id="edit" onClick={handleEdit}>Edit Note</span>
+            <span id="delete" onClick={handleDelete}>Delete Note</span>
+            
         </div>
     )
 }

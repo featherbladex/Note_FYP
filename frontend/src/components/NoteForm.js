@@ -46,11 +46,12 @@ const NoteForm = () => {
                 value={note_title}
             />
              <label>Content</label>
-            <input
-                type="text"
+             <textarea 
                 onChange={(e) => set_body(e.target.value)}
                 value={note_body}
-            />
+             />
+             <br></br>
+           
             <button>Add New Note</button>
             {error && <div className="error">{error}</div>}
         </form>
