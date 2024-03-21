@@ -115,6 +115,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -123,3 +124,10 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 } 
+
+#edit_form{
+  border: 1px solid #868686;
+  height: fit-content;
+  padding: 5px;
+  margin-top: 10px;
+}

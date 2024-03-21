@@ -59,7 +59,7 @@ const update_note = async (req, res) => {
         return res.status(404).json({error: 'No note found :('})
     }
 
-    const note = await Note.findOneAndUpdate({_id:id}, {... req.body}, {new: true})
+    const note = await Note.findByIdAndUpdate({_id:id}, {... req.body}, {new: true})
     if(!note) {
         return res.status(400).json({error: 'No note found :('})
     }

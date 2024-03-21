@@ -32,7 +32,8 @@ const NoteForm = () => {
             set_error(null)
             
             dispatch({type:'CREATE_NOTES', payload:json})
-            console.log('new note added :)')
+            console.log(new_note)
+
         }
     }
 
