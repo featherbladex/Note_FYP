@@ -114,6 +114,8 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  margin: 5px;
+  margin-top: 0;
 }
 
 div.error {
@@ -130,4 +132,29 @@ div.error {
   height: fit-content;
   padding: 5px;
   margin-top: 10px;
+}
+
+.modalContent #save{
+  background: #007c15;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 0;
+}
+.modalContent #close{
+  background: #990000;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 0;
 }

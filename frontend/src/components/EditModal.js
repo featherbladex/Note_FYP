@@ -30,8 +30,8 @@ const EditModal = ({closeModal,note_title,note_body,handleEdit}) => {
                         value= {body}
                         onChange={(e) => setNoteBody(e.target.value)}
                     />
-                    <button onClick={() => closeModal(false)}>close</button>
-                    <button form="edit_form">save</button>
+                    <button id ="close" onClick={() => closeModal(false)}>close</button>
+                    <button id="save" form="edit_form">save</button>
                 </div>   
             </form>
             

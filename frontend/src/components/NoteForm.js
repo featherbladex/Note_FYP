@@ -51,11 +51,11 @@ const NoteForm = () => {
                 onChange={(e) => set_body(e.target.value)}
                 value={note_body}
              />
-             <br></br>
-           
+             <br></br>           
             <button>Add New Note</button>
             {error && <div className="error">{error}</div>}
         </form>
+        
     )
 }
 
