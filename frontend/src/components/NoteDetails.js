@@ -2,6 +2,9 @@ import { useState } from "react"
 import { useNoteContext } from "../hooks/useNoteContext"
 import EditModal from "./EditModal"
 
+//date-fns
+import formatDistanceToNow from "date-fns/formatDistanceToNow"
+
 const NoteDetails = ({ note })=> {
     const {dispatch} = useNoteContext()
     const [editModal, setEditModal] = useState(false)
@@ -63,8 +66,8 @@ const NoteDetails = ({ note })=> {
                 handleEdit={handleEdit}
             />}
 
-            <p>{note.createdAt}</p>
-            <p>{note.updatedAt}</p>
+            <p> First Created: {formatDistanceToNow(new Date(note.createdAt), {addSuffix : true})}</p>
+            <p> Last Updated: {formatDistanceToNow(new Date(note.updatedAt), {addSuffix : true})}</p>
 
             <span id="edit" onClick={()=>{setEditModal(true)}}>Edit Note</span>
             <span id="delete" onClick={handleDelete}>Delete Note</span>

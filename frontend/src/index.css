@@ -158,3 +158,10 @@ div.error {
   margin: 5px;
   margin-top: 0;
 }
+
+input.error{
+  border: 2px solid var(--error);
+}
+textarea.error{
+  border: 2px solid var(--error);
+}
