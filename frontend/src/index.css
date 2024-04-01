@@ -4,7 +4,19 @@
 :root {
   --primary: #4c064e;
   --error: #e7195a;
+  --main_body_background:#f1f1f1;
+  --accent_background:#fff;
+  --header_text:#333;
+  --note_text:#555;
+  --shadow:rgba(0,0,0,0.05);
+  --border:#868686;
+  --edit_bg:#007c15;
+  --del_bg:#990000;
 }
+
+
+
+
 body {
   background: #f1f1f1;
   margin: 0;
