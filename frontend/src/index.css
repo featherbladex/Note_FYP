@@ -7,27 +7,37 @@
 
   --body_background: #cfcfcf;
   --body_text:#000;
+
+
   --accent_background: #fff;
+
   --header_text: #333;
   --note_text: #555;
-  --shadow: rgba(0,0,0,0.05);
+  --submit_button_text: #fff;
+
+  --shadow: #0000000d;
   --border: #868686;
+
   --edit_bg: #007c15;
   --del_bg: #990000;
-
 }
 
 [data-theme = "dark"] {
-  --primary: #a836eb;
+  --primary: #c164ff;
   --error: #e7195a;
 
   --body_background: #141414;
   --body_text:#fff;
-  --accent_background:#3a3a3a;
+
+  --accent_background:#303030;
+
   --header_text:#c0c0c0;
   --note_text:#d8d8d8;
+  --submit_button_text: #000;
+
   --shadow:#ffffff;
   --border:#868686;
+
   --edit_bg:#009118;
   --del_bg:#a70000;
 }
@@ -117,17 +127,20 @@ header a {
 }
 
 /* input forms */
+label, h3{
+  color: var(--body_text);
+}
 
 label, input {
   display: block;
-  
 }
+
 input  {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #868686;
+  border: 1px solid var(--border);
   border-radius: 4px;
   box-sizing: border-box;
   
@@ -138,7 +151,7 @@ textarea {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #868686;
+  border: 1px solid var(--border);
   border-radius: 4px;
   box-sizing: border-box;
   height: 150px;
@@ -149,7 +162,7 @@ textarea {
 form button {
   background: var(--primary);
   border: 0;
-  color: #fff;
+  color: var(--submit_button_text);
   padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;

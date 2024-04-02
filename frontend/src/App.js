@@ -1,13 +1,21 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './pages/homepage';
 import Navbar from './components/Navbar';
+import useLocalStorage from 'use-local-storage';
 
 
 function App() {
+
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+
+  const toggleTheme = () =>{
+    const newTheme = theme === 'light' ? 'dark' :'light';
+    setTheme(newTheme);
+  }
   return (
-    <div className="App" >
+    <div className="App" data-theme = {theme}>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar toggleTheme= {toggleTheme}/>
         <div className='pages'>
           <Routes>
             <Route 

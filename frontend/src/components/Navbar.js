@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const Navbar = () =>{
+const Navbar = ({toggleTheme}) =>{
 
     return(
         <header>
@@ -9,7 +9,7 @@ const Navbar = () =>{
                 <Link to="/">
                     <h1>Spectra Notes</h1>
                 </Link>
-                <button>Dark Mode</button>
+                <button onClick={toggleTheme}>Dark Mode</button>
             </div>
             
         </header>
