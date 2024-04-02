@@ -4,26 +4,47 @@
 :root {
   --primary: #4c064e;
   --error: #e7195a;
-  --main_body_background:#f1f1f1;
-  --accent_background:#fff;
-  --header_text:#333;
-  --note_text:#555;
-  --shadow:rgba(0,0,0,0.05);
-  --border:#868686;
-  --edit_bg:#007c15;
-  --del_bg:#990000;
+
+  --body_background: #cfcfcf;
+  --body_text:#000;
+  --accent_background: #fff;
+  --header_text: #333;
+  --note_text: #555;
+  --shadow: rgba(0,0,0,0.05);
+  --border: #868686;
+  --edit_bg: #007c15;
+  --del_bg: #990000;
+
 }
 
+[data-theme = "dark"] {
+  --primary: #a836eb;
+  --error: #e7195a;
 
+  --body_background: #141414;
+  --body_text:#fff;
+  --accent_background:#3a3a3a;
+  --header_text:#c0c0c0;
+  --note_text:#d8d8d8;
+  --shadow:#ffffff;
+  --border:#868686;
+  --edit_bg:#009118;
+  --del_bg:#a70000;
+}
 
+/* main page */
 
 body {
-  background: #f1f1f1;
+  background: var(--body_background);
   margin: 0;
   font-family: "Poppins";
 }
+
+
+
+/* header */
 header {
-  background: #fff;
+  background: var(--accent_background);
 }
 header .container {
   max-width: 1400px;
@@ -34,28 +55,32 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: var(--header_text);
   text-decoration: none;
 }
+
+/* home */
 .pages{
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
+  background: var(--body_background);
 }
-
 
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+
+/* note details */
 .note-details {
-  background: #fff;
+  background: var(--accent_background);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow);
 }
 .note-details h4 {
   margin: 0 0 10px 0;
@@ -65,7 +90,7 @@ header a {
 .note-details p {
   margin: 0;
   font-size: 0.9em;
-  color: #555;
+  color: var(--note_text);
 }
 
 .note-details #edit{
@@ -73,7 +98,7 @@ header a {
   top: 20px;
   right: 150px;
   cursor: pointer;
-  background: #007c15;
+  background: var(--edit_bg);
   padding: 6px;
   border-radius: 50%;
   color: #ffffff;
@@ -84,15 +109,18 @@ header a {
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #990000;
+  background: var(--del_bg);
   padding: 6px;
   border-radius: 50%;
   color: #ffffff;
   font-weight: 500;
 }
 
+/* input forms */
+
 label, input {
   display: block;
+  
 }
 input  {
   padding: 10px;
@@ -139,6 +167,7 @@ div.error {
   margin: 20px 0;
 } 
 
+/* edit modal */
 #edit_form{
   border: 1px solid #868686;
   height: fit-content;
@@ -171,6 +200,7 @@ div.error {
   margin-top: 0;
 }
 
+/* error */
 input.error{
   border: 2px solid var(--error);
 }
