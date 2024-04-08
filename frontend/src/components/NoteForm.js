@@ -42,15 +42,17 @@ const NoteForm = () => {
     return(
         <form className="create_note" onSubmit={handleSubmit}>
             <h3>Add New Note</h3>
-            <label>Title</label>
+            <label id="title_label">Title</label>
             <input
+                id="title_input"
                 type="text"
                 onChange={(e) => set_title(e.target.value)}
                 value={note_title}
                 className={emptyFields.includes('note_title') ? 'error' : ''}
             />
-             <label>Content</label>
+             <label id="content_label">Content</label>
              <textarea 
+                id="content_input"
                 onChange={(e) => set_body(e.target.value)}
                 value={note_body}
                 className={emptyFields.includes('note_body') ? 'error' : ''}

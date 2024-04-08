@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-/* layout */
+
+/* LAYOUT */
 :root {
   --primary: #4c064e;
   --error: #e7195a;
@@ -12,10 +13,12 @@
   --accent_background: #fff;
 
   --header_text: #333;
-  --note_text: #555;
+  --note_text: #222;
   --submit_button_text: #fff;
+  --toggle_bg: #636363;
+  --toggle_fg: #fff;
 
-  --shadow: #0000000d;
+  --shadow: #8888880d;
   --border: #868686;
 
   --edit_bg: #007c15;
@@ -34,6 +37,8 @@
   --header_text:#c0c0c0;
   --note_text:#d8d8d8;
   --submit_button_text: #000;
+  --toggle_bg: #a500ce;
+  --toggle_fg: #fff;
 
   --shadow:#ffffff;
   --border:#868686;
@@ -42,8 +47,7 @@
   --del_bg:#a70000;
 }
 
-/* main page */
-
+/* MAIN PAGE */
 body {
   background: var(--body_background);
   margin: 0;
@@ -51,11 +55,11 @@ body {
 }
 
 
-
-/* header */
+/* NAVBAR */
 header {
   background: var(--accent_background);
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -64,12 +68,53 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
   color: var(--header_text);
   text-decoration: none;
 }
 
-/* home */
+.switch{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  float: right;
+}
+.switch input{
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.slider{
+  position:absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--toggle_bg);
+  border-radius: 34px;
+}
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--toggle_fg);
+  transition: .4s;
+  border-radius: 50%;
+
+}
+
+input:checked + .slider:before{
+  transform: translateX(26px);
+}
+
+/* HOME */
 .pages{
   max-width: 1400px;
   padding: 20px;
@@ -83,7 +128,8 @@ header a {
   gap: 100px;
 }
 
-/* note details */
+
+/* NOTE DETAILS */
 .note-details {
   background: var(--accent_background);
   border-radius: 4px;
@@ -92,11 +138,13 @@ header a {
   position: relative;
   box-shadow: var(--shadow);
 }
+
 .note-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
+
 .note-details p {
   margin: 0;
   font-size: 0.9em;
@@ -114,6 +162,7 @@ header a {
   color: #ffffff;
   font-weight: 500;
 }
+
 .note-details #delete{
   position: absolute;
   top: 20px;
@@ -126,16 +175,17 @@ header a {
   font-weight: 500;
 }
 
-/* input forms */
-label, h3{
+
+/* INPUT FORMS AND LABELS */
+#title_label, #content_label, h3{
   color: var(--body_text);
 }
 
-label, input {
+#title_label, #content_label, #title_input, #content_input {
   display: block;
 }
 
-input  {
+#title_input{
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -146,7 +196,7 @@ input  {
   
 }
 
-textarea {
+#content_input{
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -171,16 +221,8 @@ form button {
   margin-top: 0;
 }
 
-div.error {
-  padding: 10px;
-  background: #ffefef;
-  border: 1px solid var(--error);
-  color: var(--error);
-  border-radius: 4px;
-  margin: 20px 0;
-} 
 
-/* edit modal */
+/* EDIT MODAL */
 #edit_form{
   border: 1px solid #868686;
   height: fit-content;
@@ -200,6 +242,7 @@ div.error {
   margin: 5px;
   margin-top: 0;
 }
+
 .modalContent #close{
   background: #990000;
   border: 0;
@@ -213,10 +256,17 @@ div.error {
   margin-top: 0;
 }
 
-/* error */
-input.error{
+
+/* ERROR */
+#title_input.error,#content_input.error{
   border: 2px solid var(--error);
 }
-textarea.error{
-  border: 2px solid var(--error);
-}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+} 
